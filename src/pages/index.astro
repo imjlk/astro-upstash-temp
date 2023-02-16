@@ -34,7 +34,7 @@ const title = 'Upstash Astro Notes';
       <section class="note">
         {editMode && selectedNote ? <EditNote client:load note={selectedNote} /> : null}
         {!editMode && selectedNote ? <NoteBody note={selectedNote} /> : null}
-				{!editMode && selectedNote && <div><a href={"notes/"+selectedId}>바로가기</a></div>}
+				{!editMode && selectedId && <div><a href={"notes/"+selectedId+"/1"}>바로가기</a></div>}
       </section>
     </div>
   </main>
