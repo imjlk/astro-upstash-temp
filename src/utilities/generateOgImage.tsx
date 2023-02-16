@@ -13,9 +13,6 @@ const ogImage = (text = 'hello') => {
 				justifyContent: 'center',
 				flexDirection: 'column',
 				flexWrap: 'nowrap',
-				backgroundColor: 'white',
-				backgroundImage:
-					'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
 				backgroundSize: '100px 100px',
 			}}
 		>
@@ -23,7 +20,6 @@ const ogImage = (text = 'hello') => {
 				style={{
 					display: 'flex',
 					fontStyle: 'normal',
-					color: 'black',
 					marginTop: 30,
 					lineHeight: 1.8,
 					whiteSpace: 'pre-wrap',
