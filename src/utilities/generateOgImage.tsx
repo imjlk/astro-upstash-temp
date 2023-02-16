@@ -3,8 +3,24 @@ import satori, { SatoriOptions } from 'satori';
 
 const ogImage = (text = 'hello') => {
 	return (
-		<div style={{ color: 'black', display: 'flex' }}>
-			{text}
+		<div
+			style={{
+				height: '100%',
+				width: '100%',
+				display: 'flex',
+				textAlign: 'center',
+				alignItems: 'center',
+				justifyContent: 'center',
+				flexDirection: 'column',
+				flexWrap: 'nowrap',
+				backgroundColor: 'white',
+				backgroundImage:
+					'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
+				backgroundSize: '100px 100px',
+				color: 'black',
+			}}
+		>
+			<p style={{ fontSize: 30 }}>{text}</p>
 			<p>TEST</p>
 		</div>
 	);
@@ -23,7 +39,7 @@ const generateOgImage = async (mytext: string) => {
 
 	const options: SatoriOptions = {
 		width: 1200,
-		height: 630,
+		height: 600,
 		fonts: [
 			{
 				name: 'IBM Plex Mono',
