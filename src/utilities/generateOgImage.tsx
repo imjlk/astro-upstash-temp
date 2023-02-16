@@ -17,11 +17,21 @@ const ogImage = (text = 'hello') => {
 				backgroundImage:
 					'radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%)',
 				backgroundSize: '100px 100px',
-				color: 'black',
 			}}
 		>
-			<p style={{ fontSize: 30 }}>{text}</p>
-			<p>TEST</p>
+			<div
+				style={{
+					display: 'flex',
+					fontStyle: 'normal',
+					color: 'black',
+					marginTop: 30,
+					lineHeight: 1.8,
+					whiteSpace: 'pre-wrap',
+				}}
+			>
+				<p style={{ fontSize: 30 }}>{text}</p>
+				<p>TEST</p>
+			</div>
 		</div>
 	);
 };
