@@ -1,0 +1,33 @@
+---
+import type { Note } from '../../types';
+import { getDomainUrl } from '~utilities/utilities';
+
+const { request, url } = Astro;
+const domainUrl = getDomainUrl(request);
+
+const response = await fetch(`${domainUrl}/api`, { method: 'GET' });
+const { notes }: { notes: Note[] } = await response.json();
+
+const { id } = Astro.params;
+const note =  notes.find(({ id:noteId }) => noteId === id) ?? notes[0];
+if (!note) return Astro.redirect("/404");
+const { title, text } = note;
+
+const ogUrl = new URL(`${title}.svg`, Astro.url.origin)
+  .href;
+---
+<html>
+  <head>
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={text} />
+		<meta property="og:url" content={domainUrl} />
+		<meta property="og:image" content={ogUrl} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+    <p>{text}</p>
+    <p>{id}</p>
+  </body>
+</html>
